@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.12.0 on win32)" generated="2026-03-24T14:19:32.329328" rpa="false" schemaversion="5">
+<suite id="s1" name="CaptureScreenshot" source="C:\Users\Home\Desktop\TestProject\TestCase\CaptureScreenshot.robot">
+<test id="s1-t1" name="ScreenshotTestCase" line="5">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-03-24T14:19:32.756733" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>https://opensource-demo.orangehrmlive.com/web/index.php/auth/login</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-03-24T14:19:32.756733" elapsed="6.681379"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-03-24T14:19:39.439162" elapsed="0.051387"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name=username</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-24T14:19:39.492771" elapsed="1.898247"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-24T14:19:41.392001" level="INFO">Typing text 'Admin' into text field 'name=username'.</msg>
+<arg>name=username</arg>
+<arg>Admin</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-24T14:19:41.392001" elapsed="0.162968"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-24T14:19:41.555967" level="INFO">Typing text 'admin123' into text field 'name=password'.</msg>
+<arg>name=password</arg>
+<arg>admin123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-24T14:19:41.554969" elapsed="0.197307"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://img[@alt='company-branding']</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-24T14:19:41.753274" elapsed="0.044238"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-03-24T14:19:43.799376" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-03-24T14:19:41.798127" elapsed="2.001249"/>
+</kw>
+<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
+<msg time="2026-03-24T14:19:43.945469" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="elementscreenshot.png"&gt;&lt;img src="elementscreenshot.png" width="400px"&gt;&lt;/a&gt;</msg>
+<arg>xpath://img[@alt='company-branding']</arg>
+<arg>C:/Users/Home/Desktop/TestProject/elementscreenshot.png</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<status status="PASS" start="2026-03-24T14:19:43.799376" elapsed="0.146093"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-03-24T14:19:44.115879" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="pagescreenshot.png"&gt;&lt;img src="pagescreenshot.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>C:/Users/Home/Desktop/TestProject/pagescreenshot.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-03-24T14:19:43.946472" elapsed="0.169407"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-03-24T14:19:44.116934" elapsed="2.297211"/>
+</kw>
+<status status="PASS" start="2026-03-24T14:19:32.755731" elapsed="13.659820"/>
+</test>
+<status status="PASS" start="2026-03-24T14:19:32.334455" elapsed="14.084881"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="CaptureScreenshot" id="s1" pass="1" fail="0" skip="0">CaptureScreenshot</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
