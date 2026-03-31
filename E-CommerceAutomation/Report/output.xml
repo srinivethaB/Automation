@@ -1,0 +1,1928 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.12.0 on win32)" generated="2026-03-31T20:54:53.500072" rpa="false" schemaversion="5">
+<suite id="s1" name="RegistrationTestCase" source="C:\Users\Home\Desktop\E-Commerce\TestCase\RegistrationTestCase.robot">
+<test id="s1-t1" name="Run All Register User Test Cases From Excel" line="14">
+<kw name="Get All Testcase Ids" owner="ExcelReader">
+<msg time="2026-03-31T20:54:54.757443" level="INFO">${testcase_ids} = ['TC_001', 'TC_002', 'TC_003']</msg>
+<var>${testcase_ids}</var>
+<arg>${TestData}</arg>
+<status status="PASS" start="2026-03-31T20:54:54.738749" elapsed="0.018694"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nRunning: ${tc_id}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-31T20:54:54.758479" elapsed="0.001697"/>
+</kw>
+<kw name="Get Test Data" owner="ExcelReader">
+<msg time="2026-03-31T20:54:54.772403" level="INFO">${all_data} = [{'test_id': 'TC_001', 'name': 'Test User', 'email': 'testuser_001@example.com', 'password': 'Test@1234', 'title': 'Mr', 'day': '15', 'month': 'March', 'year': '1995', 'first_name': 'Test', 'last_name...</msg>
+<var>${all_data}</var>
+<arg>${TestData}</arg>
+<arg>${tc_id}</arg>
+<status status="PASS" start="2026-03-31T20:54:54.760466" elapsed="0.011937"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Test ID: ${row}[test_id]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-31T20:54:54.773874" elapsed="0.001523"/>
+</kw>
+<kw name="Open My Browser" owner="RegisterUserKeywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:54:54.777467" level="INFO">Opening browser 'chrome' to base url 'https://www.automationexercise.com/'.</msg>
+<arg>${SiteURL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-03-31T20:54:54.777467" elapsed="19.080709"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-03-31T20:55:13.858176" elapsed="0.147601"/>
+</kw>
+<arg>${SiteURL}</arg>
+<arg>${Browser}</arg>
+<status status="PASS" start="2026-03-31T20:54:54.776392" elapsed="19.229385"/>
+</kw>
+<kw name="Verify Home Page is Visible" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:14.038692" level="INFO">${locator} = xpath://img[@alt='Website for automation practice']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>HomePage_logo</arg>
+<status status="PASS" start="2026-03-31T20:55:14.010163" elapsed="0.028529"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:14.126454" level="INFO">Element 'xpath://img[@alt='Website for automation practice']' is displayed.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-31T20:55:14.039688" elapsed="0.086766"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:14.007792" elapsed="0.119481"/>
+</kw>
+<kw name="Click SignUp Login Link" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:14.147434" level="INFO">${locator} = xpath://a[normalize-space()='Signup / Login']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>Signup/Login</arg>
+<status status="PASS" start="2026-03-31T20:55:14.128493" elapsed="0.018941"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:14.148431" level="INFO">Clicking link 'xpath://a[normalize-space()='Signup / Login']'.</msg>
+<arg>${locator}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:55:14.148431" elapsed="3.685595"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:14.127452" elapsed="3.707672"/>
+</kw>
+<kw name="Verify New User SignUp is Visible" owner="RegisterUserKeywords">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:17.869929" level="INFO">Current page contains text 'New User Signup!'.</msg>
+<arg>New User Signup!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-03-31T20:55:17.836021" elapsed="0.034137"/>
+</kw>
+<status status="PASS" start="2026-03-31T20:55:17.835124" elapsed="0.035034"/>
+</kw>
+<kw name="Enter SignUp Name" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:17.888877" level="INFO">${locator} = xpath://input[@placeholder='Name']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>SignUp_Name</arg>
+<status status="PASS" start="2026-03-31T20:55:17.870925" elapsed="0.017952"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:17.889874" level="INFO">Typing text 'Test User' into text field 'xpath://input[@placeholder='Name']'.</msg>
+<arg>${locator}</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:55:17.889874" elapsed="0.439180"/>
+</kw>
+<arg>${row}[name]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:17.870158" elapsed="0.458896"/>
+</kw>
+<kw name="Enter SignUp Email" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:18.347024" level="INFO">${locator} = xpath://input[@data-qa='signup-email']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>SignUp_Email</arg>
+<status status="PASS" start="2026-03-31T20:55:18.331049" elapsed="0.016955"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:18.349001" level="INFO">Typing text 'testuser_001@example.com' into text field 'xpath://input[@data-qa='signup-email']'.</msg>
+<arg>${locator}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:55:18.348004" elapsed="0.175063"/>
+</kw>
+<arg>${row}[email]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:18.329054" elapsed="0.194013"/>
+</kw>
+<kw name="Click SignUp Button" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:18.538026" level="INFO">${locator} = xpath://button[normalize-space()='Signup']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>SignUp_btn</arg>
+<status status="PASS" start="2026-03-31T20:55:18.524067" elapsed="0.013959"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:18.540022" level="INFO">Clicking button 'xpath://button[normalize-space()='Signup']'.</msg>
+<arg>${locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:55:18.539459" elapsed="4.124316"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:18.523642" elapsed="4.140917"/>
+</kw>
+<kw name="Verify Account Information Page Is Visible" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:22.683711" level="INFO">${locator} = xpath://b[text()='Enter Account Information']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>AccInfoHeading</arg>
+<status status="PASS" start="2026-03-31T20:55:22.666764" elapsed="0.016947"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:22.752813" level="INFO">Element 'xpath://b[text()='Enter Account Information']' is displayed.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-31T20:55:22.683711" elapsed="0.069102"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:22.665644" elapsed="0.087169"/>
+</kw>
+<kw name="Select Title" owner="RegisterUserKeywords">
+<if>
+<branch type="IF" condition="'${title}' == 'Mr'">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:22.770803" level="INFO">${locator} = id:id_gender1</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>gender_mr</arg>
+<status status="PASS" start="2026-03-31T20:55:22.754813" elapsed="0.015990"/>
+</kw>
+<status status="PASS" start="2026-03-31T20:55:22.753810" elapsed="0.017575"/>
+</branch>
+<branch type="ELSE IF" condition="'${title}' == 'Mrs'">
+<kw name="Get Locator" owner="ExcelReader">
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>gender_mrs</arg>
+<status status="NOT RUN" start="2026-03-31T20:55:22.771385" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-31T20:55:22.771385" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-03-31T20:55:22.753810" elapsed="0.018572"/>
+</if>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:22.772382" level="INFO">Clicking element 'id:id_gender1'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:55:22.772382" elapsed="0.289759"/>
+</kw>
+<arg>${row}[title]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:22.753810" elapsed="0.308331"/>
+</kw>
+<kw name="Enter Account Password" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:23.082124" level="INFO">${locator} = id:password</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>pwd</arg>
+<status status="PASS" start="2026-03-31T20:55:23.064135" elapsed="0.018951"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:23.084108" level="INFO">Typing text 'Test@1234' into text field 'id:password'.</msg>
+<arg>${locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:55:23.083353" elapsed="0.214730"/>
+</kw>
+<arg>${row}[password]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:23.063189" elapsed="0.235891"/>
+</kw>
+<kw name="Select Day Of Birth" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:23.312045" level="INFO">${locator} = id:days</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>days_dropDown</arg>
+<status status="PASS" start="2026-03-31T20:55:23.300077" elapsed="0.011968"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:23.313042" level="INFO">Selecting options from selection list 'id:days' by value 15.</msg>
+<arg>${locator}</arg>
+<arg>${day}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-03-31T20:55:23.313042" elapsed="0.167163"/>
+</kw>
+<arg>${row}[day]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:23.299080" elapsed="0.181125"/>
+</kw>
+<kw name="Select Month Of Birth" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:23.498100" level="INFO">${locator} = id:months</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>month_dropDown</arg>
+<status status="PASS" start="2026-03-31T20:55:23.482141" elapsed="0.015959"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:23.499435" level="INFO">Selecting options from selection list 'id:months' by label March.</msg>
+<arg>${locator}</arg>
+<arg>${month}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-03-31T20:55:23.498100" elapsed="0.287781"/>
+</kw>
+<arg>${row}[month]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:23.481146" elapsed="0.304735"/>
+</kw>
+<kw name="Select Year Of Birth" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:23.796817" level="INFO">${locator} = id:years</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>year_dropDown</arg>
+<status status="PASS" start="2026-03-31T20:55:23.786845" elapsed="0.009972"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:23.797863" level="INFO">Selecting options from selection list 'id:years' by value 1995.</msg>
+<arg>${locator}</arg>
+<arg>${year}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-03-31T20:55:23.796817" elapsed="0.133644"/>
+</kw>
+<arg>${row}[year]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:23.785881" elapsed="0.145578"/>
+</kw>
+<kw name="Select Newsletter Checkbox" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:23.954396" level="INFO">${locator} = xpath://label[@for='newsletter']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>newsLetter_checkBox</arg>
+<status status="PASS" start="2026-03-31T20:55:23.932455" elapsed="0.021941"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:23.955392" level="INFO">Clicking element 'xpath://label[@for='newsletter']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:55:23.954396" elapsed="0.166140"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:23.931459" elapsed="0.190053"/>
+</kw>
+<kw name="Select Special Offers Checkbox" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:24.145449" level="INFO">${locator} = xpath://label[@for='optin']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>offerLetter_checkBox</arg>
+<status status="PASS" start="2026-03-31T20:55:24.124504" elapsed="0.020945"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:24.147486" level="INFO">Clicking element 'xpath://label[@for='optin']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:55:24.146447" elapsed="0.171679"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:24.123024" elapsed="0.195102"/>
+</kw>
+<kw name="Enter First Name" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:24.337074" level="INFO">${locator} = id:first_name</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>first_nameField</arg>
+<status status="PASS" start="2026-03-31T20:55:24.319123" elapsed="0.017951"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:24.338375" level="INFO">Typing text 'Test' into text field 'id:first_name'.</msg>
+<arg>${locator}</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:55:24.337074" elapsed="0.209442"/>
+</kw>
+<arg>${row}[first_name]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:24.318126" elapsed="0.228390"/>
+</kw>
+<kw name="Enter Last Name" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:24.560556" level="INFO">${locator} = id:last_name</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>last_nameField</arg>
+<status status="PASS" start="2026-03-31T20:55:24.547513" elapsed="0.013043"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:24.562472" level="INFO">Typing text 'User' into text field 'id:last_name'.</msg>
+<arg>${locator}</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:55:24.561499" elapsed="0.182305"/>
+</kw>
+<arg>${row}[last_name]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:24.546516" elapsed="0.197333"/>
+</kw>
+<kw name="Enter Company" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:24.756962" level="INFO">${locator} = id:company</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>CompanyField</arg>
+<status status="PASS" start="2026-03-31T20:55:24.746798" elapsed="0.010164"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:24.758765" level="INFO">Typing text 'Test Company' into text field 'id:company'.</msg>
+<arg>${locator}</arg>
+<arg>${company}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:55:24.757768" elapsed="0.200451"/>
+</kw>
+<arg>${row}[company]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:24.745801" elapsed="0.212418"/>
+</kw>
+<kw name="Enter Address1" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:24.973179" level="INFO">${locator} = id:address1</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>address1_Field</arg>
+<status status="PASS" start="2026-03-31T20:55:24.960214" elapsed="0.013257"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:24.974212" level="INFO">Typing text '123 Test Street' into text field 'id:address1'.</msg>
+<arg>${locator}</arg>
+<arg>${address1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:55:24.973471" elapsed="0.219893"/>
+</kw>
+<arg>${row}[address1]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:24.959217" elapsed="0.234147"/>
+</kw>
+<kw name="Enter Address2" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:25.215303" level="INFO">${locator} = id:address2</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>address2_Field</arg>
+<status status="PASS" start="2026-03-31T20:55:25.195320" elapsed="0.019983"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:25.216297" level="INFO">Typing text 'Apt 4B' into text field 'id:address2'.</msg>
+<arg>${locator}</arg>
+<arg>${address2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:55:25.215303" elapsed="0.183472"/>
+</kw>
+<arg>${row}[address2]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:25.194323" elapsed="0.205493"/>
+</kw>
+<kw name="Select Country" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:25.422712" level="INFO">${locator} = id:country</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>country_dropDown</arg>
+<status status="PASS" start="2026-03-31T20:55:25.400943" elapsed="0.021769"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:25.423713" level="INFO">Selecting options from selection list 'id:country' by label United States.</msg>
+<arg>${locator}</arg>
+<arg>${country}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-03-31T20:55:25.422712" elapsed="0.219444"/>
+</kw>
+<arg>${row}[country]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:25.399816" elapsed="0.243338"/>
+</kw>
+<kw name="Enter State" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:25.665132" level="INFO">${locator} = id:state</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>state_field</arg>
+<status status="PASS" start="2026-03-31T20:55:25.644151" elapsed="0.020981"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:25.666123" level="INFO">Typing text 'California' into text field 'id:state'.</msg>
+<arg>${locator}</arg>
+<arg>${state}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:55:25.666123" elapsed="0.234092"/>
+</kw>
+<arg>${row}[state]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:25.643154" elapsed="0.258059"/>
+</kw>
+<kw name="Enter City" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:25.918166" level="INFO">${locator} = id:city</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>city_field</arg>
+<status status="PASS" start="2026-03-31T20:55:25.902211" elapsed="0.016061"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:25.918742" level="INFO">Typing text 'Los Angeles' into text field 'id:city'.</msg>
+<arg>${locator}</arg>
+<arg>${city}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:55:25.918272" elapsed="0.220913"/>
+</kw>
+<arg>${row}[city]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:25.901213" elapsed="0.238447"/>
+</kw>
+<kw name="Enter Zipcode" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:26.157172" level="INFO">${locator} = id:zipcode</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>zipcode_field</arg>
+<status status="PASS" start="2026-03-31T20:55:26.141179" elapsed="0.015993"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:26.158554" level="INFO">Typing text '90001' into text field 'id:zipcode'.</msg>
+<arg>${locator}</arg>
+<arg>${zipcode}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:55:26.158168" elapsed="0.211156"/>
+</kw>
+<arg>${row}[zipcode]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:26.140188" elapsed="0.229136"/>
+</kw>
+<kw name="Enter Mobile Number" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:26.388515" level="INFO">${locator} = id:mobile_number</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>mobilenumber_field</arg>
+<status status="PASS" start="2026-03-31T20:55:26.371318" elapsed="0.017550"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:26.389865" level="INFO">Typing text '9876543210' into text field 'id:mobile_number'.</msg>
+<arg>${locator}</arg>
+<arg>${mobile}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:55:26.388868" elapsed="0.236314"/>
+</kw>
+<arg>${row}[mobile_number]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:26.370321" elapsed="0.255857"/>
+</kw>
+<kw name="Click Create Account Button" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:26.642135" level="INFO">${locator} = xpath://button[@data-qa='create-account']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>CreateAccount_btn</arg>
+<status status="PASS" start="2026-03-31T20:55:26.627421" elapsed="0.014714"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:26.644130" level="INFO">Clicking button 'xpath://button[@data-qa='create-account']'.</msg>
+<arg>${locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:55:26.643315" elapsed="3.473552"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:26.626178" elapsed="3.491687"/>
+</kw>
+<kw name="Verify Account Created" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:30.146799" level="INFO">${locator} = xpath://b[text()='Account Created!']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>AccountCreated_txt</arg>
+<status status="PASS" start="2026-03-31T20:55:30.119860" elapsed="0.027926"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:30.193661" level="INFO">Element 'xpath://b[text()='Account Created!']' is displayed.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-31T20:55:30.148782" elapsed="0.044879"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:30.118862" elapsed="0.075797"/>
+</kw>
+<kw name="Click Continue Button" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:30.217822" level="INFO">${locator} = xpath://a[@class='btn btn-primary']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>Continue_btn</arg>
+<status status="PASS" start="2026-03-31T20:55:30.195655" elapsed="0.022167"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:30.219703" level="INFO">Clicking element 'xpath://a[@class='btn btn-primary']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:55:30.218864" elapsed="5.634163"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:30.194659" elapsed="5.658368"/>
+</kw>
+<kw name="Verify Logged In As Username" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:35.871974" level="INFO">${locator} = xpath://li[10]//a[1]</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>Loggedin_Username</arg>
+<status status="PASS" start="2026-03-31T20:55:35.855020" elapsed="0.016954"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:35.917854" level="INFO">Element 'xpath://li[10]//a[1]' is displayed.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-31T20:55:35.871974" elapsed="0.046909"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:35.854563" elapsed="0.064320"/>
+</kw>
+<kw name="Click Delete Account Link" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:35.936801" level="INFO">${locator} = xpath://a[contains(text(),'Delete Account')]</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>DeleteAcc_Link</arg>
+<status status="PASS" start="2026-03-31T20:55:35.919846" elapsed="0.016955"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:35.937799" level="INFO">Clicking element 'xpath://a[contains(text(),'Delete Account')]'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:55:35.936801" elapsed="0.177184"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:35.918883" elapsed="0.195640"/>
+</kw>
+<kw name="Verify Account Deleted" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:36.136924" level="INFO">${locator} = xpath://b[text()='Account Deleted!']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>AccountDeleted_text</arg>
+<status status="PASS" start="2026-03-31T20:55:36.115980" elapsed="0.020944"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-31T20:55:36.137921" elapsed="4.254930"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:40.422062" level="INFO">Element 'xpath://b[text()='Account Deleted!']' is displayed.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-31T20:55:40.393844" elapsed="0.028218"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:36.114983" elapsed="4.307746"/>
+</kw>
+<kw name="Click Continue Button" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:55:40.439889" level="INFO">${locator} = xpath://a[@class='btn btn-primary']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>Continue_btn</arg>
+<status status="PASS" start="2026-03-31T20:55:40.423733" elapsed="0.016156"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:40.441764" level="INFO">Clicking element 'xpath://a[@class='btn btn-primary']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:55:40.440682" elapsed="5.649434"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:55:40.422729" elapsed="5.667387"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-03-31T20:55:48.091473" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-03-31T20:55:46.090116" elapsed="2.001357"/>
+</kw>
+<kw name="Close My Browsers" owner="RegisterUserKeywords">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-03-31T20:55:48.093478" elapsed="2.464757"/>
+</kw>
+<status status="PASS" start="2026-03-31T20:55:48.092482" elapsed="2.465753"/>
+</kw>
+<var name="${row}">{'test_id': 'TC_001', 'name': 'Test User', 'email': 'testuser_001@example.com', 'password': 'Test@1234', 'title': 'Mr', 'day': '15', 'month': 'March', 'year': '1995', 'first_name': 'Test', 'last_name'...</var>
+<status status="PASS" start="2026-03-31T20:54:54.773874" elapsed="55.785465"/>
+</iter>
+<var>${row}</var>
+<value>@{all_data}</value>
+<status status="PASS" start="2026-03-31T20:54:54.772403" elapsed="55.786936"/>
+</for>
+<var name="${tc_id}">TC_001</var>
+<status status="PASS" start="2026-03-31T20:54:54.758479" elapsed="55.801750"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nRunning: ${tc_id}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-31T20:55:50.562223" elapsed="0.002121"/>
+</kw>
+<kw name="Get Test Data" owner="ExcelReader">
+<msg time="2026-03-31T20:55:50.593852" level="INFO">${all_data} = [{'test_id': 'TC_002', 'name': 'Jane Doe', 'email': 'janedoe_002@example.com', 'password': 'Jane@5678', 'title': 'Mrs', 'day': '20', 'month': 'June', 'year': '1990', 'first_name': 'Jane', 'last_name':...</msg>
+<var>${all_data}</var>
+<arg>${TestData}</arg>
+<arg>${tc_id}</arg>
+<status status="PASS" start="2026-03-31T20:55:50.565216" elapsed="0.028636"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Test ID: ${row}[test_id]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-31T20:55:50.596844" elapsed="0.001961"/>
+</kw>
+<kw name="Open My Browser" owner="RegisterUserKeywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:55:50.601784" level="INFO">Opening browser 'chrome' to base url 'https://www.automationexercise.com/'.</msg>
+<arg>${SiteURL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-03-31T20:55:50.600969" elapsed="56.062524"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-03-31T20:56:46.664457" elapsed="0.118855"/>
+</kw>
+<arg>${SiteURL}</arg>
+<arg>${Browser}</arg>
+<status status="PASS" start="2026-03-31T20:55:50.598805" elapsed="56.185449"/>
+</kw>
+<kw name="Verify Home Page is Visible" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:56:46.812236" level="INFO">${locator} = xpath://img[@alt='Website for automation practice']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>HomePage_logo</arg>
+<status status="PASS" start="2026-03-31T20:56:46.786280" elapsed="0.025956"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:56:46.878513" level="INFO">Element 'xpath://img[@alt='Website for automation practice']' is displayed.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-31T20:56:46.813192" elapsed="0.065321"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:56:46.784254" elapsed="0.094259"/>
+</kw>
+<kw name="Click SignUp Login Link" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:56:46.899456" level="INFO">${locator} = xpath://a[normalize-space()='Signup / Login']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>Signup/Login</arg>
+<status status="PASS" start="2026-03-31T20:56:46.880507" elapsed="0.018949"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:56:46.901417" level="INFO">Clicking link 'xpath://a[normalize-space()='Signup / Login']'.</msg>
+<arg>${locator}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:56:46.900909" elapsed="9.585086"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:56:46.879510" elapsed="9.607094"/>
+</kw>
+<kw name="Verify New User SignUp is Visible" owner="RegisterUserKeywords">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:56:56.531918" level="INFO">Current page contains text 'New User Signup!'.</msg>
+<arg>New User Signup!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-03-31T20:56:56.487602" elapsed="0.044881"/>
+</kw>
+<status status="PASS" start="2026-03-31T20:56:56.486604" elapsed="0.045954"/>
+</kw>
+<kw name="Enter SignUp Name" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:56:56.552853" level="INFO">${locator} = xpath://input[@placeholder='Name']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>SignUp_Name</arg>
+<status status="PASS" start="2026-03-31T20:56:56.533478" elapsed="0.019375"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:56:56.554460" level="INFO">Typing text 'Jane Doe' into text field 'xpath://input[@placeholder='Name']'.</msg>
+<arg>${locator}</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:56:56.553424" elapsed="0.284504"/>
+</kw>
+<arg>${row}[name]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:56:56.532558" elapsed="0.306367"/>
+</kw>
+<kw name="Enter SignUp Email" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:56:56.861897" level="INFO">${locator} = xpath://input[@data-qa='signup-email']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>SignUp_Email</arg>
+<status status="PASS" start="2026-03-31T20:56:56.840919" elapsed="0.020978"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:56:56.863172" level="INFO">Typing text 'janedoe_002@example.com' into text field 'xpath://input[@data-qa='signup-email']'.</msg>
+<arg>${locator}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:56:56.861897" elapsed="0.230385"/>
+</kw>
+<arg>${row}[email]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:56:56.839926" elapsed="0.253355"/>
+</kw>
+<kw name="Click SignUp Button" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:56:57.113233" level="INFO">${locator} = xpath://button[normalize-space()='Signup']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>SignUp_btn</arg>
+<status status="PASS" start="2026-03-31T20:56:57.094277" elapsed="0.018956"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:56:57.114223" level="INFO">Clicking button 'xpath://button[normalize-space()='Signup']'.</msg>
+<arg>${locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:56:57.113233" elapsed="6.265363"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:56:57.093281" elapsed="6.286313"/>
+</kw>
+<kw name="Verify Account Information Page Is Visible" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:03.405485" level="INFO">${locator} = xpath://b[text()='Enter Account Information']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>AccInfoHeading</arg>
+<status status="PASS" start="2026-03-31T20:57:03.381587" elapsed="0.023898"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:03.465924" level="INFO">Element 'xpath://b[text()='Enter Account Information']' is displayed.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-31T20:57:03.406520" elapsed="0.059404"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:03.379594" elapsed="0.087332"/>
+</kw>
+<kw name="Select Title" owner="RegisterUserKeywords">
+<if>
+<branch type="IF" condition="'${title}' == 'Mr'">
+<kw name="Get Locator" owner="ExcelReader">
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>gender_mr</arg>
+<status status="NOT RUN" start="2026-03-31T20:57:03.469913" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-03-31T20:57:03.468916" elapsed="0.000997"/>
+</branch>
+<branch type="ELSE IF" condition="'${title}' == 'Mrs'">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:03.493852" level="INFO">${locator} = id:id_gender2</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>gender_mrs</arg>
+<status status="PASS" start="2026-03-31T20:57:03.470911" elapsed="0.022941"/>
+</kw>
+<status status="PASS" start="2026-03-31T20:57:03.470911" elapsed="0.022941"/>
+</branch>
+<status status="PASS" start="2026-03-31T20:57:03.468916" elapsed="0.025932"/>
+</if>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:03.494848" level="INFO">Clicking element 'id:id_gender2'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:03.494848" elapsed="0.264524"/>
+</kw>
+<arg>${row}[title]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:03.467919" elapsed="0.292451"/>
+</kw>
+<kw name="Enter Account Password" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:03.788296" level="INFO">${locator} = id:password</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>pwd</arg>
+<status status="PASS" start="2026-03-31T20:57:03.762365" elapsed="0.025931"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:03.790289" level="INFO">Typing text 'Jane@5678' into text field 'id:password'.</msg>
+<arg>${locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:03.789293" elapsed="0.248677"/>
+</kw>
+<arg>${row}[password]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:03.760370" elapsed="0.278633"/>
+</kw>
+<kw name="Select Day Of Birth" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:04.059917" level="INFO">${locator} = id:days</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>days_dropDown</arg>
+<status status="PASS" start="2026-03-31T20:57:04.041000" elapsed="0.020907"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:04.062907" level="INFO">Selecting options from selection list 'id:days' by value 20.</msg>
+<arg>${locator}</arg>
+<arg>${day}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-03-31T20:57:04.061907" elapsed="0.260723"/>
+</kw>
+<arg>${row}[day]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:04.040000" elapsed="0.282630"/>
+</kw>
+<kw name="Select Month Of Birth" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:04.351343" level="INFO">${locator} = id:months</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>month_dropDown</arg>
+<status status="PASS" start="2026-03-31T20:57:04.325625" elapsed="0.025718"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:04.353370" level="INFO">Selecting options from selection list 'id:months' by label June.</msg>
+<arg>${locator}</arg>
+<arg>${month}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-03-31T20:57:04.352350" elapsed="0.306982"/>
+</kw>
+<arg>${row}[month]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:04.323624" elapsed="0.335708"/>
+</kw>
+<kw name="Select Year Of Birth" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:04.688251" level="INFO">${locator} = id:years</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>year_dropDown</arg>
+<status status="PASS" start="2026-03-31T20:57:04.662319" elapsed="0.025932"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:04.690298" level="INFO">Selecting options from selection list 'id:years' by value 1990.</msg>
+<arg>${locator}</arg>
+<arg>${year}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-03-31T20:57:04.689247" elapsed="0.202463"/>
+</kw>
+<arg>${row}[year]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:04.660327" elapsed="0.231383"/>
+</kw>
+<kw name="Select Newsletter Checkbox" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:04.921625" level="INFO">${locator} = xpath://label[@for='newsletter']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>newsLetter_checkBox</arg>
+<status status="PASS" start="2026-03-31T20:57:04.893700" elapsed="0.027925"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:04.923121" level="INFO">Clicking element 'xpath://label[@for='newsletter']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:04.922623" elapsed="0.255851"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:04.892702" elapsed="0.285772"/>
+</kw>
+<kw name="Select Special Offers Checkbox" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:05.201412" level="INFO">${locator} = xpath://label[@for='optin']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>offerLetter_checkBox</arg>
+<status status="PASS" start="2026-03-31T20:57:05.180469" elapsed="0.021877"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:05.203407" level="INFO">Clicking element 'xpath://label[@for='optin']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:05.202410" elapsed="0.197475"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:05.179473" elapsed="0.221405"/>
+</kw>
+<kw name="Enter First Name" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:05.417833" level="INFO">${locator} = id:first_name</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>first_nameField</arg>
+<status status="PASS" start="2026-03-31T20:57:05.401876" elapsed="0.015957"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:05.418832" level="INFO">Typing text 'Jane' into text field 'id:first_name'.</msg>
+<arg>${locator}</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:05.417833" elapsed="0.185504"/>
+</kw>
+<arg>${row}[first_name]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:05.400878" elapsed="0.202459"/>
+</kw>
+<kw name="Enter Last Name" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:05.626275" level="INFO">${locator} = id:last_name</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>last_nameField</arg>
+<status status="PASS" start="2026-03-31T20:57:05.605333" elapsed="0.021435"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:05.627309" level="INFO">Typing text 'Doe' into text field 'id:last_name'.</msg>
+<arg>${locator}</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:05.627309" elapsed="0.218396"/>
+</kw>
+<arg>${row}[last_name]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:05.604336" elapsed="0.241369"/>
+</kw>
+<kw name="Enter Company" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:05.876178" level="INFO">${locator} = id:company</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>CompanyField</arg>
+<status status="PASS" start="2026-03-31T20:57:05.848659" elapsed="0.027519"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:05.878178" level="INFO">Typing text 'Doe Corp' into text field 'id:company'.</msg>
+<arg>${locator}</arg>
+<arg>${company}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:05.877176" elapsed="0.239753"/>
+</kw>
+<arg>${row}[company]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:05.846662" elapsed="0.270267"/>
+</kw>
+<kw name="Enter Address1" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:06.143875" level="INFO">${locator} = id:address1</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>address1_Field</arg>
+<status status="PASS" start="2026-03-31T20:57:06.118889" elapsed="0.024986"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:06.145857" level="INFO">Typing text '456 Oak Avenue' into text field 'id:address1'.</msg>
+<arg>${locator}</arg>
+<arg>${address1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:06.144872" elapsed="0.244912"/>
+</kw>
+<arg>${row}[address1]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:06.116929" elapsed="0.272855"/>
+</kw>
+<kw name="Enter Address2" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:06.417695" level="INFO">${locator} = id:address2</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>address2_Field</arg>
+<status status="PASS" start="2026-03-31T20:57:06.391775" elapsed="0.025920"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:06.419727" level="INFO">Typing text 'Suite 10' into text field 'id:address2'.</msg>
+<arg>${locator}</arg>
+<arg>${address2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:06.418731" elapsed="0.235687"/>
+</kw>
+<arg>${row}[address2]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:06.390767" elapsed="0.263651"/>
+</kw>
+<kw name="Select Country" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:06.681344" level="INFO">${locator} = id:country</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>country_dropDown</arg>
+<status status="PASS" start="2026-03-31T20:57:06.656422" elapsed="0.024922"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:06.683338" level="INFO">Selecting options from selection list 'id:country' by label Canada.</msg>
+<arg>${locator}</arg>
+<arg>${country}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-03-31T20:57:06.682343" elapsed="0.256998"/>
+</kw>
+<arg>${row}[country]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:06.655414" elapsed="0.284922"/>
+</kw>
+<kw name="Enter State" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:06.960278" level="INFO">${locator} = id:state</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>state_field</arg>
+<status status="PASS" start="2026-03-31T20:57:06.942290" elapsed="0.017988"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:06.961242" level="INFO">Typing text 'Ontario' into text field 'id:state'.</msg>
+<arg>${locator}</arg>
+<arg>${state}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:06.960278" elapsed="0.210087"/>
+</kw>
+<arg>${row}[state]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:06.940336" elapsed="0.231027"/>
+</kw>
+<kw name="Enter City" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:07.193303" level="INFO">${locator} = id:city</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>city_field</arg>
+<status status="PASS" start="2026-03-31T20:57:07.173355" elapsed="0.020912"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:07.195262" level="INFO">Typing text 'Toronto' into text field 'id:city'.</msg>
+<arg>${locator}</arg>
+<arg>${city}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:07.194267" elapsed="0.214100"/>
+</kw>
+<arg>${row}[city]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:07.172360" elapsed="0.236287"/>
+</kw>
+<kw name="Enter Zipcode" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:07.427598" level="INFO">${locator} = id:zipcode</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>zipcode_field</arg>
+<status status="PASS" start="2026-03-31T20:57:07.410392" elapsed="0.017206"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:07.428644" level="INFO">Typing text '785412' into text field 'id:zipcode'.</msg>
+<arg>${locator}</arg>
+<arg>${zipcode}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:07.428258" elapsed="0.196235"/>
+</kw>
+<arg>${row}[zipcode]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:07.408647" elapsed="0.216844"/>
+</kw>
+<kw name="Enter Mobile Number" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:07.650427" level="INFO">${locator} = id:mobile_number</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>mobilenumber_field</arg>
+<status status="PASS" start="2026-03-31T20:57:07.626720" elapsed="0.023707"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:07.652421" level="INFO">Typing text '4161234567' into text field 'id:mobile_number'.</msg>
+<arg>${locator}</arg>
+<arg>${mobile}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:07.651425" elapsed="0.218655"/>
+</kw>
+<arg>${row}[mobile_number]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:07.625491" elapsed="0.244589"/>
+</kw>
+<kw name="Click Create Account Button" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:07.888028" level="INFO">${locator} = xpath://button[@data-qa='create-account']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>CreateAccount_btn</arg>
+<status status="PASS" start="2026-03-31T20:57:07.871036" elapsed="0.016992"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:07.889024" level="INFO">Clicking button 'xpath://button[@data-qa='create-account']'.</msg>
+<arg>${locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:07.889024" elapsed="3.159771"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:07.871036" elapsed="3.177759"/>
+</kw>
+<kw name="Verify Account Created" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:11.068744" level="INFO">${locator} = xpath://b[text()='Account Created!']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>AccountCreated_txt</arg>
+<status status="PASS" start="2026-03-31T20:57:11.050030" elapsed="0.018714"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:11.125590" level="INFO">Element 'xpath://b[text()='Account Created!']' is displayed.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-31T20:57:11.068744" elapsed="0.056846"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:11.049828" elapsed="0.075762"/>
+</kw>
+<kw name="Click Continue Button" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:11.139552" level="INFO">${locator} = xpath://a[@class='btn btn-primary']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>Continue_btn</arg>
+<status status="PASS" start="2026-03-31T20:57:11.126588" elapsed="0.012964"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:11.140588" level="INFO">Clicking element 'xpath://a[@class='btn btn-primary']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:11.139928" elapsed="5.459218"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:11.126588" elapsed="5.473700"/>
+</kw>
+<kw name="Verify Logged In As Username" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:16.634241" level="INFO">${locator} = xpath://li[10]//a[1]</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>Loggedin_Username</arg>
+<status status="PASS" start="2026-03-31T20:57:16.603157" elapsed="0.032014"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:16.719976" level="INFO">Element 'xpath://li[10]//a[1]' is displayed.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-31T20:57:16.636057" elapsed="0.085021"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:16.601144" elapsed="0.120830"/>
+</kw>
+<kw name="Click Delete Account Link" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:16.768847" level="INFO">${locator} = xpath://a[contains(text(),'Delete Account')]</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>DeleteAcc_Link</arg>
+<status status="PASS" start="2026-03-31T20:57:16.724962" elapsed="0.044883"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:16.772344" level="INFO">Clicking element 'xpath://a[contains(text(),'Delete Account')]'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:16.770842" elapsed="0.271029"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:16.722969" elapsed="0.318902"/>
+</kw>
+<kw name="Verify Account Deleted" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:17.064695" level="INFO">${locator} = xpath://b[text()='Account Deleted!']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>AccountDeleted_text</arg>
+<status status="PASS" start="2026-03-31T20:57:17.043746" elapsed="0.020949"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-31T20:57:17.065687" elapsed="4.411910"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:21.505553" level="INFO">Element 'xpath://b[text()='Account Deleted!']' is displayed.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-31T20:57:21.478592" elapsed="0.026961"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:17.042748" elapsed="4.462805"/>
+</kw>
+<kw name="Click Continue Button" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:21.525472" level="INFO">${locator} = xpath://a[@class='btn btn-primary']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>Continue_btn</arg>
+<status status="PASS" start="2026-03-31T20:57:21.506530" elapsed="0.018942"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:21.526469" level="INFO">Clicking element 'xpath://a[@class='btn btn-primary']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:21.525472" elapsed="2.535788"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:21.505553" elapsed="2.555932"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-03-31T20:57:26.064673" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-03-31T20:57:24.062431" elapsed="2.002242"/>
+</kw>
+<kw name="Close My Browsers" owner="RegisterUserKeywords">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-03-31T20:57:26.066673" elapsed="2.456666"/>
+</kw>
+<status status="PASS" start="2026-03-31T20:57:26.065676" elapsed="2.457663"/>
+</kw>
+<var name="${row}">{'test_id': 'TC_002', 'name': 'Jane Doe', 'email': 'janedoe_002@example.com', 'password': 'Jane@5678', 'title': 'Mrs', 'day': '20', 'month': 'June', 'year': '1990', 'first_name': 'Jane', 'last_name': ...</var>
+<status status="PASS" start="2026-03-31T20:55:50.595846" elapsed="97.927493"/>
+</iter>
+<var>${row}</var>
+<value>@{all_data}</value>
+<status status="PASS" start="2026-03-31T20:55:50.595064" elapsed="97.929276"/>
+</for>
+<var name="${tc_id}">TC_002</var>
+<status status="PASS" start="2026-03-31T20:55:50.561400" elapsed="97.962940"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nRunning: ${tc_id}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-31T20:57:28.526334" elapsed="0.000988"/>
+</kw>
+<kw name="Get Test Data" owner="ExcelReader">
+<msg time="2026-03-31T20:57:28.567334" level="INFO">${all_data} = [{'test_id': 'TC_003', 'name': 'John Smith', 'email': 'johnsmith_003@example.com', 'password': 'Smith@9012', 'title': 'Mr', 'day': '5', 'month': 'January', 'year': '1988', 'first_name': 'John', 'last_...</msg>
+<var>${all_data}</var>
+<arg>${TestData}</arg>
+<arg>${tc_id}</arg>
+<status status="PASS" start="2026-03-31T20:57:28.528605" elapsed="0.038729"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Test ID: ${row}[test_id]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-31T20:57:28.569208" elapsed="0.001953"/>
+</kw>
+<kw name="Open My Browser" owner="RegisterUserKeywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:28.575195" level="INFO">Opening browser 'chrome' to base url 'https://www.automationexercise.com/'.</msg>
+<arg>${SiteURL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-03-31T20:57:28.574201" elapsed="6.733966"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-03-31T20:57:35.309158" elapsed="0.097740"/>
+</kw>
+<arg>${SiteURL}</arg>
+<arg>${Browser}</arg>
+<status status="PASS" start="2026-03-31T20:57:28.572207" elapsed="6.834691"/>
+</kw>
+<kw name="Verify Home Page is Visible" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:35.451226" level="INFO">${locator} = xpath://img[@alt='Website for automation practice']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>HomePage_logo</arg>
+<status status="PASS" start="2026-03-31T20:57:35.408890" elapsed="0.042336"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:35.524582" level="INFO">Element 'xpath://img[@alt='Website for automation practice']' is displayed.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-31T20:57:35.452778" elapsed="0.072800"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:35.407893" elapsed="0.117685"/>
+</kw>
+<kw name="Click SignUp Login Link" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:35.544526" level="INFO">${locator} = xpath://a[normalize-space()='Signup / Login']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>Signup/Login</arg>
+<status status="PASS" start="2026-03-31T20:57:35.527597" elapsed="0.016929"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:35.545639" level="INFO">Clicking link 'xpath://a[normalize-space()='Signup / Login']'.</msg>
+<arg>${locator}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:35.544526" elapsed="1.371408"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:35.526575" elapsed="1.389359"/>
+</kw>
+<kw name="Verify New User SignUp is Visible" owner="RegisterUserKeywords">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:36.974807" level="INFO">Current page contains text 'New User Signup!'.</msg>
+<arg>New User Signup!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-03-31T20:57:36.917932" elapsed="0.057285"/>
+</kw>
+<status status="PASS" start="2026-03-31T20:57:36.917113" elapsed="0.058104"/>
+</kw>
+<kw name="Enter SignUp Name" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:36.989773" level="INFO">${locator} = xpath://input[@placeholder='Name']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>SignUp_Name</arg>
+<status status="PASS" start="2026-03-31T20:57:36.975804" elapsed="0.013969"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:36.991729" level="INFO">Typing text 'John Smith' into text field 'xpath://input[@placeholder='Name']'.</msg>
+<arg>${locator}</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:36.990732" elapsed="0.399543"/>
+</kw>
+<arg>${row}[name]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:36.975217" elapsed="0.416057"/>
+</kw>
+<kw name="Enter SignUp Email" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:37.415208" level="INFO">${locator} = xpath://input[@data-qa='signup-email']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>SignUp_Email</arg>
+<status status="PASS" start="2026-03-31T20:57:37.392307" elapsed="0.022901"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:37.416206" level="INFO">Typing text 'johnsmith_003@example.com' into text field 'xpath://input[@data-qa='signup-email']'.</msg>
+<arg>${locator}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:37.415208" elapsed="0.670477"/>
+</kw>
+<arg>${row}[email]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:37.391478" elapsed="0.695204"/>
+</kw>
+<kw name="Click SignUp Button" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:38.106629" level="INFO">${locator} = xpath://button[normalize-space()='Signup']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>SignUp_btn</arg>
+<status status="PASS" start="2026-03-31T20:57:38.087679" elapsed="0.018950"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:38.107625" level="INFO">Clicking button 'xpath://button[normalize-space()='Signup']'.</msg>
+<arg>${locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:38.106629" elapsed="5.286418"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:38.087031" elapsed="5.307020"/>
+</kw>
+<kw name="Verify Account Information Page Is Visible" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:43.410001" level="INFO">${locator} = xpath://b[text()='Enter Account Information']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>AccInfoHeading</arg>
+<status status="PASS" start="2026-03-31T20:57:43.395305" elapsed="0.014696"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:43.448937" level="INFO">Element 'xpath://b[text()='Enter Account Information']' is displayed.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-31T20:57:43.410998" elapsed="0.038935"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:43.394051" elapsed="0.055882"/>
+</kw>
+<kw name="Select Title" owner="RegisterUserKeywords">
+<if>
+<branch type="IF" condition="'${title}' == 'Mr'">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:43.461901" level="INFO">${locator} = id:id_gender1</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>gender_mr</arg>
+<status status="PASS" start="2026-03-31T20:57:43.451017" elapsed="0.010884"/>
+</kw>
+<status status="PASS" start="2026-03-31T20:57:43.451017" elapsed="0.010884"/>
+</branch>
+<branch type="ELSE IF" condition="'${title}' == 'Mrs'">
+<kw name="Get Locator" owner="ExcelReader">
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>gender_mrs</arg>
+<status status="NOT RUN" start="2026-03-31T20:57:43.461901" elapsed="0.000998"/>
+</kw>
+<status status="NOT RUN" start="2026-03-31T20:57:43.461901" elapsed="0.000998"/>
+</branch>
+<status status="PASS" start="2026-03-31T20:57:43.451017" elapsed="0.011882"/>
+</if>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:43.463897" level="INFO">Clicking element 'id:id_gender1'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:43.462899" elapsed="0.276007"/>
+</kw>
+<arg>${row}[title]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:43.449933" elapsed="0.288973"/>
+</kw>
+<kw name="Enter Account Password" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:43.749849" level="INFO">${locator} = id:password</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>pwd</arg>
+<status status="PASS" start="2026-03-31T20:57:43.739910" elapsed="0.009939"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:43.749849" level="INFO">Typing text 'Smith@9012' into text field 'id:password'.</msg>
+<arg>${locator}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:43.749849" elapsed="0.215106"/>
+</kw>
+<arg>${row}[password]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:43.738906" elapsed="0.227043"/>
+</kw>
+<kw name="Select Day Of Birth" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:43.978914" level="INFO">${locator} = id:days</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>days_dropDown</arg>
+<status status="PASS" start="2026-03-31T20:57:43.966946" elapsed="0.011968"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:43.979912" level="INFO">Selecting options from selection list 'id:days' by value 5.</msg>
+<arg>${locator}</arg>
+<arg>${day}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-03-31T20:57:43.978914" elapsed="0.149693"/>
+</kw>
+<arg>${row}[day]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:43.965949" elapsed="0.162658"/>
+</kw>
+<kw name="Select Month Of Birth" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:44.146595" level="INFO">${locator} = id:months</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>month_dropDown</arg>
+<status status="PASS" start="2026-03-31T20:57:44.130603" elapsed="0.015992"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:44.147588" level="INFO">Selecting options from selection list 'id:months' by label January.</msg>
+<arg>${locator}</arg>
+<arg>${month}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-03-31T20:57:44.146595" elapsed="0.272788"/>
+</kw>
+<arg>${row}[month]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:44.129607" elapsed="0.290773"/>
+</kw>
+<kw name="Select Year Of Birth" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:44.442482" level="INFO">${locator} = id:years</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>year_dropDown</arg>
+<status status="PASS" start="2026-03-31T20:57:44.422375" elapsed="0.020107"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:44.443319" level="INFO">Selecting options from selection list 'id:years' by value 1988.</msg>
+<arg>${locator}</arg>
+<arg>${year}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-03-31T20:57:44.443319" elapsed="0.166562"/>
+</kw>
+<arg>${row}[year]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:44.421592" elapsed="0.189279"/>
+</kw>
+<kw name="Select Newsletter Checkbox" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:44.633440" level="INFO">${locator} = xpath://label[@for='newsletter']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>newsLetter_checkBox</arg>
+<status status="PASS" start="2026-03-31T20:57:44.612320" elapsed="0.021120"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:44.634433" level="INFO">Clicking element 'xpath://label[@for='newsletter']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:44.634433" elapsed="0.164061"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:44.610871" elapsed="0.188082"/>
+</kw>
+<kw name="Select Special Offers Checkbox" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:44.817442" level="INFO">${locator} = xpath://label[@for='optin']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>offerLetter_checkBox</arg>
+<status status="PASS" start="2026-03-31T20:57:44.799491" elapsed="0.017951"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:44.818439" level="INFO">Clicking element 'xpath://label[@for='optin']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:44.818108" elapsed="0.131982"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:44.798953" elapsed="0.151137"/>
+</kw>
+<kw name="Enter First Name" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:44.974025" level="INFO">${locator} = id:first_name</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>first_nameField</arg>
+<status status="PASS" start="2026-03-31T20:57:44.952166" elapsed="0.021859"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:44.975020" level="INFO">Typing text 'John' into text field 'id:first_name'.</msg>
+<arg>${locator}</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:44.975020" elapsed="0.219436"/>
+</kw>
+<arg>${row}[first_name]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:44.951085" elapsed="0.243371"/>
+</kw>
+<kw name="Enter Last Name" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:45.220704" level="INFO">${locator} = id:last_name</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>last_nameField</arg>
+<status status="PASS" start="2026-03-31T20:57:45.196485" elapsed="0.024219"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:45.221866" level="INFO">Typing text 'Smith' into text field 'id:last_name'.</msg>
+<arg>${locator}</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:45.220704" elapsed="0.213054"/>
+</kw>
+<arg>${row}[last_name]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:45.195453" elapsed="0.239300"/>
+</kw>
+<kw name="Enter Company" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:45.454700" level="INFO">${locator} = id:company</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>CompanyField</arg>
+<status status="PASS" start="2026-03-31T20:57:45.436781" elapsed="0.017919"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:45.455697" level="INFO">Typing text 'Smith LLC' into text field 'id:company'.</msg>
+<arg>${locator}</arg>
+<arg>${company}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:45.455282" elapsed="0.222255"/>
+</kw>
+<arg>${row}[company]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:45.435751" elapsed="0.241786"/>
+</kw>
+<kw name="Enter Address1" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:45.696138" level="INFO">${locator} = id:address1</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>address1_Field</arg>
+<status status="PASS" start="2026-03-31T20:57:45.679183" elapsed="0.016955"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:45.697136" level="INFO">Typing text '789 Pine Road' into text field 'id:address1'.</msg>
+<arg>${locator}</arg>
+<arg>${address1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:45.696138" elapsed="0.228999"/>
+</kw>
+<arg>${row}[address1]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:45.678189" elapsed="0.246948"/>
+</kw>
+<kw name="Enter Address2" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:45.940385" level="INFO">${locator} = id:address2</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>address2_Field</arg>
+<status status="PASS" start="2026-03-31T20:57:45.926165" elapsed="0.014963"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:45.941957" level="INFO">Typing text 'Nehru Street' into text field 'id:address2'.</msg>
+<arg>${locator}</arg>
+<arg>${address2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:45.941128" elapsed="0.210963"/>
+</kw>
+<arg>${row}[address2]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:45.926165" elapsed="0.227282"/>
+</kw>
+<kw name="Select Country" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:46.170045" level="INFO">${locator} = id:country</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>country_dropDown</arg>
+<status status="PASS" start="2026-03-31T20:57:46.155082" elapsed="0.015644"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:46.172038" level="INFO">Selecting options from selection list 'id:country' by label India.</msg>
+<arg>${locator}</arg>
+<arg>${country}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2026-03-31T20:57:46.171043" elapsed="0.152541"/>
+</kw>
+<arg>${row}[country]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:46.154088" elapsed="0.170494"/>
+</kw>
+<kw name="Enter State" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:46.341890" level="INFO">${locator} = id:state</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>state_field</arg>
+<status status="PASS" start="2026-03-31T20:57:46.325580" elapsed="0.016310"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:46.342883" level="INFO">Typing text 'Tamilnadu' into text field 'id:state'.</msg>
+<arg>${locator}</arg>
+<arg>${state}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:46.342883" elapsed="0.196784"/>
+</kw>
+<arg>${row}[state]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:46.324582" elapsed="0.215488"/>
+</kw>
+<kw name="Enter City" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:46.553714" level="INFO">${locator} = id:city</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>city_field</arg>
+<status status="PASS" start="2026-03-31T20:57:46.541662" elapsed="0.012052"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:46.555624" level="INFO">Typing text 'Coimbatore' into text field 'id:city'.</msg>
+<arg>${locator}</arg>
+<arg>${city}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:46.554883" elapsed="0.196032"/>
+</kw>
+<arg>${row}[city]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:46.540665" elapsed="0.210250"/>
+</kw>
+<kw name="Enter Zipcode" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:46.766919" level="INFO">${locator} = id:zipcode</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>zipcode_field</arg>
+<status status="PASS" start="2026-03-31T20:57:46.751919" elapsed="0.015000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:46.767868" level="INFO">Typing text '400001' into text field 'id:zipcode'.</msg>
+<arg>${locator}</arg>
+<arg>${zipcode}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:46.767507" elapsed="0.165232"/>
+</kw>
+<arg>${row}[zipcode]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:46.751919" elapsed="0.180820"/>
+</kw>
+<kw name="Enter Mobile Number" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:46.946671" level="INFO">${locator} = id:mobile_number</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>mobilenumber_field</arg>
+<status status="PASS" start="2026-03-31T20:57:46.933844" elapsed="0.012827"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:46.947802" level="INFO">Typing text '9123456780' into text field 'id:mobile_number'.</msg>
+<arg>${locator}</arg>
+<arg>${mobile}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:46.947802" elapsed="0.181630"/>
+</kw>
+<arg>${row}[mobile_number]</arg>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:46.932739" elapsed="0.196693"/>
+</kw>
+<kw name="Click Create Account Button" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:47.150342" level="INFO">${locator} = xpath://button[@data-qa='create-account']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>CreateAccount_btn</arg>
+<status status="PASS" start="2026-03-31T20:57:47.130427" elapsed="0.019971"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:47.151385" level="INFO">Clicking button 'xpath://button[@data-qa='create-account']'.</msg>
+<arg>${locator}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:47.150398" elapsed="2.208796"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:47.129432" elapsed="2.229762"/>
+</kw>
+<kw name="Verify Account Created" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:49.387996" level="INFO">${locator} = xpath://b[text()='Account Created!']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>AccountCreated_txt</arg>
+<status status="PASS" start="2026-03-31T20:57:49.362065" elapsed="0.025931"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:49.427888" level="INFO">Element 'xpath://b[text()='Account Created!']' is displayed.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-31T20:57:49.387996" elapsed="0.040073"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:49.360070" elapsed="0.067999"/>
+</kw>
+<kw name="Click Continue Button" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:49.441884" level="INFO">${locator} = xpath://a[@class='btn btn-primary']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>Continue_btn</arg>
+<status status="PASS" start="2026-03-31T20:57:49.428885" elapsed="0.012999"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:49.442897" level="INFO">Clicking element 'xpath://a[@class='btn btn-primary']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:49.441884" elapsed="4.029891"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:49.428069" elapsed="4.044703"/>
+</kw>
+<kw name="Verify Logged In As Username" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:53.492720" level="INFO">${locator} = xpath://li[10]//a[1]</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>Loggedin_Username</arg>
+<status status="PASS" start="2026-03-31T20:57:53.473771" elapsed="0.018949"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:53.542588" level="INFO">Element 'xpath://li[10]//a[1]' is displayed.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-31T20:57:53.493727" elapsed="0.049856"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:53.473081" elapsed="0.070502"/>
+</kw>
+<kw name="Click Delete Account Link" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:53.566520" level="INFO">${locator} = xpath://a[contains(text(),'Delete Account')]</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>DeleteAcc_Link</arg>
+<status status="PASS" start="2026-03-31T20:57:53.545577" elapsed="0.021940"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:53.568768" level="INFO">Clicking element 'xpath://a[contains(text(),'Delete Account')]'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:53.567517" elapsed="0.267314"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:53.543583" elapsed="0.292243"/>
+</kw>
+<kw name="Verify Account Deleted" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:53.857768" level="INFO">${locator} = xpath://b[text()='Account Deleted!']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>AccountDeleted_text</arg>
+<status status="PASS" start="2026-03-31T20:57:53.836824" elapsed="0.020944"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-31T20:57:53.857768" elapsed="4.802530"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:58.700183" level="INFO">Element 'xpath://b[text()='Account Deleted!']' is displayed.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-31T20:57:58.661286" elapsed="0.038897"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:53.836384" elapsed="4.863799"/>
+</kw>
+<kw name="Click Continue Button" owner="RegisterUserKeywords">
+<kw name="Get Locator" owner="ExcelReader">
+<msg time="2026-03-31T20:57:58.720650" level="INFO">${locator} = xpath://a[@class='btn btn-primary']</msg>
+<var>${locator}</var>
+<arg>${locator_file}</arg>
+<arg>Continue_btn</arg>
+<status status="PASS" start="2026-03-31T20:57:58.702176" elapsed="0.018474"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-31T20:57:58.722522" level="INFO">Clicking element 'xpath://a[@class='btn btn-primary']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-31T20:57:58.720650" elapsed="4.569685"/>
+</kw>
+<arg>${LocatorFile}</arg>
+<status status="PASS" start="2026-03-31T20:57:58.701178" elapsed="4.589764"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-03-31T20:58:05.292961" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-03-31T20:58:03.290942" elapsed="2.002019"/>
+</kw>
+<kw name="Close My Browsers" owner="RegisterUserKeywords">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-03-31T20:58:05.294954" elapsed="2.409263"/>
+</kw>
+<status status="PASS" start="2026-03-31T20:58:05.294368" elapsed="2.409849"/>
+</kw>
+<var name="${row}">{'test_id': 'TC_003', 'name': 'John Smith', 'email': 'johnsmith_003@example.com', 'password': 'Smith@9012', 'title': 'Mr', 'day': '5', 'month': 'January', 'year': '1988', 'first_name': 'John', 'last_n...</var>
+<status status="PASS" start="2026-03-31T20:57:28.569208" elapsed="39.135009"/>
+</iter>
+<var>${row}</var>
+<value>@{all_data}</value>
+<status status="PASS" start="2026-03-31T20:57:28.567334" elapsed="39.137878"/>
+</for>
+<var name="${tc_id}">TC_003</var>
+<status status="PASS" start="2026-03-31T20:57:28.525332" elapsed="39.179880"/>
+</iter>
+<var>${tc_id}</var>
+<value>@{testcase_ids}</value>
+<status status="PASS" start="2026-03-31T20:54:54.758160" elapsed="192.947052"/>
+</for>
+<status status="PASS" start="2026-03-31T20:54:54.735749" elapsed="192.971477"/>
+</test>
+<status status="PASS" start="2026-03-31T20:54:53.503024" elapsed="194.207176"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="RegistrationTestCase" id="s1" pass="1" fail="0" skip="0">RegistrationTestCase</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
