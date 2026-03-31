@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.12.0 on win32)" generated="2026-03-27T13:51:05.064050" rpa="false" schemaversion="5">
+<suite id="s1" name="RegistrationTest" source="C:\Users\Home\Desktop\POM\TestCases\RegistrationTest.robot">
+<test id="s1-t1" name="RegistrationFormTest" line="11">
+<kw name="Open my Browser" owner="RegistrationKeywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-03-27T13:51:05.502097" level="INFO">Opening browser 'chrome' to base url 'https://www.tutorialspoint.com/selenium/practice/register.php'.</msg>
+<arg>${SiteUrl}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-03-27T13:51:05.502097" elapsed="1.998006"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-03-27T13:51:07.501241" elapsed="0.066164"/>
+</kw>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<status status="PASS" start="2026-03-27T13:51:05.501077" elapsed="2.066328"/>
+</kw>
+<kw name="Enter First_Name" owner="RegistrationKeywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${txt_firstName}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-27T13:51:07.569398" elapsed="0.054144"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-27T13:51:07.625548" level="INFO">Typing text 'Neha' into text field 'xpath://input[@placeholder='First Name']'.</msg>
+<arg>${txt_firstName}</arg>
+<arg>${firstName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-27T13:51:07.624542" elapsed="0.226438"/>
+</kw>
+<arg>Neha</arg>
+<status status="PASS" start="2026-03-27T13:51:07.568400" elapsed="0.282580"/>
+</kw>
+<kw name="Enter Last_Name" owner="RegistrationKeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-27T13:51:07.852978" level="INFO">Typing text 'Rajput' into text field 'xpath://input[@id='lastname']'.</msg>
+<arg>${txt_lastName}</arg>
+<arg>${lastName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-27T13:51:07.851978" elapsed="0.210306"/>
+</kw>
+<arg>Rajput</arg>
+<status status="PASS" start="2026-03-27T13:51:07.851978" elapsed="0.210306"/>
+</kw>
+<kw name="Enter Username" owner="RegistrationKeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-27T13:51:08.063281" level="INFO">Typing text 'Neha@gmail.com' into text field 'xpath://input[@placeholder='UserName']'.</msg>
+<arg>${txt_userName}</arg>
+<arg>${userName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-27T13:51:08.063281" elapsed="0.198305"/>
+</kw>
+<arg>Neha@gmail.com</arg>
+<status status="PASS" start="2026-03-27T13:51:08.063281" elapsed="0.198305"/>
+</kw>
+<kw name="Enter Password" owner="RegistrationKeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-27T13:51:08.264350" level="INFO">Typing text 'Neharaj@123456' into text field 'xpath://input[@placeholder='Password']'.</msg>
+<arg>${txt_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-27T13:51:08.263317" elapsed="0.212619"/>
+</kw>
+<arg>Neharaj@123456</arg>
+<status status="PASS" start="2026-03-27T13:51:08.263317" elapsed="0.212619"/>
+</kw>
+<kw name="Click Register Button" owner="RegistrationKeywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-03-27T13:51:08.478794" level="INFO">Clicking button 'xpath://input[@value='Register']'.</msg>
+<arg>${btn_register}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-27T13:51:08.478794" elapsed="0.985629"/>
+</kw>
+<status status="PASS" start="2026-03-27T13:51:08.476935" elapsed="0.987677"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-03-27T13:51:09.465822" elapsed="2.346674"/>
+</kw>
+<status status="PASS" start="2026-03-27T13:51:05.499850" elapsed="6.313690"/>
+</test>
+<status status="PASS" start="2026-03-27T13:51:05.066044" elapsed="6.751063"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="RegistrationTest" id="s1" pass="1" fail="0" skip="0">RegistrationTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
